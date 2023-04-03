@@ -1,14 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- lang="en" ++ type of character and language -->
 <head>
     <!--Meta tag == how we communicate with the web browser.-->
-    <meta charset="UTF-8"> <!--type of character and language -->
+    <meta charset="UTF-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!---->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Web Developer">
-    <title>Document</title>
+    <!--Create an Icon for the title--><link rel="icon" type="image/x-icon" href="https://2.bp.blogspot.com/-MUOPRaSPR1Q/WOUw3PnkdjI/AAAAAAAAALE/2j-ogqZkXrodwT9KaDngIvvAAL6WX-A9ACLcB/s1600/Gioconda.jpg">
+    <title>My first page</title>
+    <style> 
+    .css_header{
+        color: red;
+        background-color: aqua;
+    }
+    #back_img{
+        background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.JvJlzAtZEMQAIKPuJ_RjgAHaFj%26pid%3DApi&f=1&ipt=6d103bdc6e8c148972c869fcd89f64170e3ff53c4372d2803492f4b998b3b4a5&ipo=images');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed; /* This makes the fixed cover of an immage moving stay static*/
+        font-size: 25px;
+        color: white;
+        min-height: 200px;
+        max-width: 200px;
+        text-align: center;
+    }
+    h2{
+        color: red;
+    }
+    th, td {
+        padding: 10px;
+    }
+    table{
+        border-spacing: 30px;
+    }
+    </style> <!--internal CSS-->
 </head>
 <body>
+
+<!--The Basics-->
+    <h1 style="color: red;">The Basics</h1>
+
     <!-- This is a comment -->
+    <a href="https://www.google.com">Google</a> <!--Links to redirect the user--> <br> <!--this is a line break-->
+    <img id="Doggo" title="this is a dog" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.2Zj3WtIb3-iFQjAqYJbnlwHaFA%26pid%3DApi&f=1&ipt=01412428d1d58d41e06d4fd824067ba6488f6bcffafe141d90337ade650a2c7a&ipo=images" alt="this is a dog image">
+    <h1>this is a heading</h1>
+    <hr> <!--This is a horizontal rule-->
+    <p title="A dog is an animal">What is a dog ?</p>
+
+<!--Formatings-->
+
+    <h2 style="color:red">Types of formating</h2>
+    <b>This is a bold text</b> <br>
+    <strong>this is also a bold text</strong> <br>
+    <i>Italic</i> <br>
+    <em>Emphasized text, same as italic</em> <br>
+    <mark>Marked text</mark> <br>
+    <small>Small text</small> <br>
+    <del>del text</del> <br> 
+    <ins>inserted text</ins>
+    <p>normal text<sub>subscript text</sub></p>
+    <p>normal text <sup>Superscript</sup></p>
+
+    <h2 style="color:red">Quotation & abbreviations</h2>
+
+<!--quotations-->
+
+    <p>this is a quote</p>
+    <blockquote cite="https://wikipedia.com">
+        this is a quoted text.
+    </blockquote>
+
+    <!--Another way to quote a text is with 'q'-->
+    <p>quotes from a book: <q> The quote. </q> </p>
+
+    <!--Abbreviations-->
+    <p>The <abbr title="World Health Organization">WHO</abbr> is a health entity.</p>
+
+    <p>Cited, <cite>The Illiad</cite> by Homero.</p>
+
+    <!--Address-->
+    <address>
+        Written by John Doe.<br>
+        Visit us at:<br>
+        Example.com<br>
+        Box 564, Disneyland<br>
+        USA
+    </address> 
+
+    <!-- bi-directional text-->    
+
+    <bdo dir="rtl">This is backwards.</bdo>
+
+    
+<!--CSS-->
+
+    <h1 class="css_header">CSS</h1>
+
+<!--links-->
+
+    <h2 style="color:red;">Links</h2>
+    <a href="https://www.google.com" target="_blank">Blank</a>  <br>
+    <a href="https://www.google.com" target="_parent">Parent</a> <br>
+
+    <!--Book marks-->
+    <a href="#Doggo"> go to the doggo</a> <br>
+
+<!--Images-->
+
+    <h2>images</h2>
+
+    <!--imaps-->
+    <img src="https://www.w3schools.com/html/workplace.jpg" alt="Workplace" usemap="#workmap">
+
+    <map name="workmap">
+      <area shape="rect" coords="34,44,270,350" alt="Computer" href="https://www.google.com/search?q=computer" target="_blank">
+      <area shape="rect" coords="290,172,333,250" alt="Phone" href="https://www.google.com/search?q=phone" target="_blank">
+      <area shape="circle" coords="337,300,44" alt="Coffee" href="https://www.google.com/search?q=coffee" target="_blank">
+      <area shape="poly" coords="1,190,30,230,1,270" alt="Notepad" onclick="bookFunc()" target="_blank">
+    </map> 
+
+    <!--background image-->
+    <p id="back_img" > Space background </p>
+
+<!--Tables-->
+
+    <h2>Tables</h2>
+
+    <table border="1px">
+        <thead>Fisrt table</thead>
+        <tr>
+            <th rowspan="2">Content 1</th>
+            <th colspan="2">Content 2</th>
+        </tr>
+        <tr>
+            <td>text 1.1</td>
+            <td>text 2.1</td>
+        </tr>
+        <tr>
+            <td>text 1.2</td>
+            <td>text 2.2</td>
+        </tr>
+    </table>
+
+<!--Lists-->
+
+    <h2>lists</h2>
+
+    <!--Ordered list-->
+    <ol style="list-style-type: circle;">
+        <li>dog</li>
+        <li>Cat</li>
+        <li>mouse</li>
+    </ol>
+
+    <!--Unordered list-->
+
+    <ul style="list-style-type: armenian;"> <!--There are different types of styles for a list-->
+        <li>cheese</li>
+        <li>milk</li>
+        <li>bread</li>
+    </ul>
+
+    <!--Description list-->
+
+    <dl style="list-style-type: disc;">
+        <dt>American</dt>
+            <dd>dark coffee</dd>
+        <dt>latte</dt>
+            <dd>milk and coffee</dd>
+    </dl>
+
 </body>
+
+<script>
+    function bookFunc(){
+        alert('That is a notebook!!');
+    }
+        
+</script> <!--Internal Script-->
 </html>
