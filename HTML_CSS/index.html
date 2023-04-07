@@ -2,11 +2,35 @@
 <html lang="en"> <!-- lang="en" ++ type of character and language -->
 <head>
     <!--Meta tag == how we communicate with the web browser.-->
+
+    <!--Character set-->
     <meta charset="UTF-8"> 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!---->
+
+    <!--Support old legacy browsers-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--Setting the website to be more responsive in multiple devices-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Defines keyworkd for search engine-->
     <meta name="keywords" content="Web Developer">
-    <!--Create an Icon for the title--><link rel="icon" type="image/x-icon" href="https://2.bp.blogspot.com/-MUOPRaSPR1Q/WOUw3PnkdjI/AAAAAAAAALE/2j-ogqZkXrodwT9KaDngIvvAAL6WX-A9ACLcB/s1600/Gioconda.jpg">
+
+    <!--Provides a description of your web page-->
+    <meta name="description" content="A test page to learn HTML and web development">
+
+    <!--Gives an author of this WEb page-->
+    <meta name="author" content="Camilo Sierra">
+    
+    <!--It will refresh the web page every 3 secs-->
+    <meta http-equiv="refresh" content="">
+
+    <!--base link for any resource on the rest of the HTML file-->
+    <base href="" target="_blank">
+
+
+    <!--Create an Icon for the title-->
+    <link rel="icon" type="image/x-icon" href="https://2.bp.blogspot.com/-MUOPRaSPR1Q/WOUw3PnkdjI/AAAAAAAAALE/2j-ogqZkXrodwT9KaDngIvvAAL6WX-A9ACLcB/s1600/Gioconda.jpg">
+    
     <title>My first page</title>
     <style> 
     .css_header{
@@ -170,12 +194,60 @@
             <dd>milk and coffee</dd>
     </dl>
 
+<!--Iframes-->
+
+    <iframe src="resources/resources.html" height="200" width="300" title="Iframe Example" style="border: 1px;"></iframe> <br> <br> <br>
+    
+    <!--It is possible as well to target iframes with link such as follows-->
+
+    <iframe src="resources/resources.html" frameborder="1" style="height: 500px; width: 500px;" name="this_is_a_target" title="Targeted iframe"></iframe> <br>
+    <a href="https://www.google.com" target="this_is_a_target">Open google on the iframe targeted </a>
+
+<!--java scrip example-->
+
+    <br><br>
+
+    <button onclick="changetext()">Change the text!!</button>
+
+    <p id="targetid">This is the text.</p>
+
+
+<!--Layouts-->
+
+    <header>Titles</header>
+    <nav>Navigation bar</nav>
+    <section>Section of the page</section>
+    <article>The main article of a page</article>
+    <aside>Relative information</aside>
+    <footer>End of the webpage</footer>
+    <!--When it come to layouts you can use frameworks such as 'boostrap'
+    Also some CSS properties can be used for it: 
+    
+    float 
+    clear
+    flexbox 
+    grid
+    -->
+
+
+
+
+
 </body>
 
 <script>
     function bookFunc(){
         alert('That is a notebook!!');
     }
-        
+
+    function changetext(){
+        document.getElementById('targetid').style.color='red';
+        document.getElementById('targetid').style.fontFamily='helvetica';
+        document.getElementById('targetid').style.backgroundColor='yellow';
+        document.getElementById('targetid').innerHTML='This is the text changed by JavaScript!'
+    }
 </script> <!--Internal Script-->
+
+<noscript>Sorry, your browser does not support JavaScript!</noscript> <!--a error msm if the browser does not support Js-->
+
 </html>
