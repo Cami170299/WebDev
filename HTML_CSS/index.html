@@ -20,7 +20,7 @@
 
     <!--Gives an author of this WEb page-->
     <meta name="author" content="Camilo Sierra">
-    
+
     <!--It will refresh the web page every 3 secs-->
     <meta http-equiv="refresh" content="">
 
@@ -56,6 +56,12 @@
     }
     table{
         border-spacing: 30px;
+    }
+    kbd {
+        background-color: lightgray; 
+        border: 1px solid grey;
+        border-radius: 5px; 
+        padding: 3px;
     }
     </style> <!--internal CSS-->
 </head>
@@ -229,9 +235,124 @@
     grid
     -->
 
+<!--Basic of resposive web design-->
+
+    <!--adjusting images with a % sign allows to take the exact amount in different displays-->
+    <img src="resources/img_girl.jpg" alt="responsive_example" style="max-width: 50%;">
+
+    <!--Text adjustments also allow you to create responsive text-->
+    <p style="font-size: 10vw;">This is a responsive text.</p>
+    <p>This is a non-responsive web text.</p>
 
 
+<!--Code elements-->
+<h2>Code an non text</h2>
 
+    <!--When you try to redact code on aweb page you can also do it by adding code tags  as follow-->
+    <code>
+        x = 5;
+        y = 2; 
+        y + x = 7; 
+    </code>
+
+    <!--If you prefer code being used with a break you can use pre to solve this problem-->
+    <pre>
+        <code>
+            x = 5;
+            y = 2; 
+            y + x = 7; 
+        </code>
+    </pre>
+
+    <!--Use to determinate any type of nontext, more as a command or keyboard input-->
+    <p>Example save the file pressing <kbd>Control + S</kbd> </p>
+
+    <!--Samp is used to describe output from a program-->
+    <samp>File not found or Error 404</samp>
+
+    <!--Inorder to express variables you can use the tag var -->
+    <p>The variable <var>H</var> for height as an example</p>
+
+
+<!--HTML Entities--> <h2>HTML Entities</h2>
+
+    <p> Non-breaking space &#160;</p>
+    <p>less than &#60;</p>
+    <p>Greater than  &#62;</p>
+
+<!--forms--> <h2>Forms</h2>
+
+    <form action=""> <!--Container of information -->
+        <label for="Fname">Full Name</label> <br> <!--Label for each input element-->
+        <input type="text" id="Fname" name="Fname"><br> <!--User's input label-->
+        <input type="button" value="Button"> <br> 
+
+        <label for="checkbox">Checkbox</label>
+        <input type="checkbox" name="Check box" id=""> <br>
+        <input type="color" name="color" id=""> <br>
+        <input type="date" name="date" id=""> <br>
+        <input type="datetime" name="datetime" id=""> <br>
+        <input type="datetime-local" name="datetime-local" id=""> <br>
+        <input type="email" name="email" id=""> <br>
+        <input type="file" name="file" id=""> <br>
+        <input type="hidden" name="hidden"> <br>
+        <input type="image" src="image" alt=""> <br>
+        <input type="month" name="month" id=""> <br>
+        <input type="number" name="number" id=""> <br>
+        <input type="password" name="password" id=""> <br>
+        <input type="radio" name="radio" id=""> <br>
+        <input type="range" name="" id=""> <br>
+        <input type="reset" value="reset"> <br>
+        <input type="search" name="" id=""> <br>
+        <input type="submit" value="submit"> <br>
+        <input type="tel" name="" id=""> <br>
+        <input type="text" name="" id=""> <br>
+        <input type="time" name="" id=""> <br>
+        <input type="url" name="" id=""> <br>
+        <input type="week" name="" id=""> <br>
+        
+    </form>
+
+
+    <p>Choose your favorite Web language:</p>
+
+    <form action="resources/thanks.html" target="_self"> <!--The action attribute express what will happen once the info is submitted-->
+        <input type="radio" id="html" name="fav_language" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="fav_language" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+        <label for="javascript">JavaScript</label> <br>
+        <input type="submit" value="Submit">
+    </form> 
+
+    <h2>form elements</h2>
+
+    <form action="POST">
+        <label for="text">Text input</label>
+        <input type="text"> <br>
+
+        <label for="cars">Choose a car:</label>
+        <select id="cars" name="cars" size="3" multiple> <!--size attribute allows you to create a selection box & MULTIPLE allows you to chose multiple options from a selection-->
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="fiat">Fiat</option>
+          <option value="audi" selected>Audi</option> <!--The selected attribute makes it a default selection   -->
+        </select>  <br>
+
+        <textarea name="Message" id="msm" cols="30" rows="10" placeholder="write your msm here!!"></textarea> <br>
+
+        <input type="submit" value="Submit" onclick="alert('Hello World!')"> <br>
+
+        <input list="browsers">
+        <datalist id="browsers">
+          <option value="Internet Explorer">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Opera">
+          <option value="Safari">
+        </datalist>
+    </form>
 
 </body>
 
