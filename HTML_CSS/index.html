@@ -354,6 +354,12 @@
         </datalist>
     </form>
 
+    <h2>API's</h2>
+
+    <p id="demo"></p>
+
+    <button onclick="getLocation()">Try It</button>
+
 </body>
 
 <script>
@@ -366,6 +372,19 @@
         document.getElementById('targetid').style.fontFamily='helvetica';
         document.getElementById('targetid').style.backgroundColor='yellow';
         document.getElementById('targetid').innerHTML='This is the text changed by JavaScript!'
+    }
+    var x = document.getElementById("demo");
+    function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+    }
+
+    function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
     }
 </script> <!--Internal Script-->
 

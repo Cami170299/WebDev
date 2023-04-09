@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+    <style>
+        h1{
+            color: red;
+            font-size: 3vw;
+            text-align: center;
+
+        }
+        h2{
+            color: blue;
+            font-size: 2vw;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Introduction</h1>
+
+<!--First JavaScript-->
+
+<h2>My fisrt JavaScript</h2>
+<button type="button" onclick="dateAndTime()"> 
+    Date and Time!
+</button>
+<p id="demo"></p>
+
+
+<!--Changing Texts-->
+
+<h2>Changing Text</h2>
+<p>JavaScript can change text on any tag.</p>
+<p id="cText">For instace we can chnge this text...</p>
+<button type="button" onclick="changeText()">Change</button>
+<br>
+<p>JS can also change styles</p>
+<p id="colorText">Change the color of this text.</p>
+<button id="changeColor" onclick="changeColor()">Change Color</button>
+<br>
+<p>JS can also hide HTML elements</p>
+<p id="hideText">Hide this text clicking 'Hide Text'</p>
+<button type="button" onclick="hide()">Hide Text</button>
+
+
+<!--Performing a basic operation-->
+
+<h2>Getting elements to perform a basic operation</h2>
+<p>
+    <span id="varX">612</span> + <span id="varY">45</span>
+</p>
+<button type="button" onclick="operation()">Calculate Sum</button>
+<br><br><div id="result"></div>
+
+
+
+<!--Priting a WebPage-->
+
+<h2>printing a webpage</h2>
+<button type="button" onclick="window.print()">Print Page</button>
+
+
+</body>
+<script src="script.js"></script> <!--Calling a Js file ag the end is the best practice-->
+</html>
