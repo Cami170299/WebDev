@@ -7,6 +7,8 @@ comment
 */
 
 
+
+
 /*THE BASICS*/
 
 {
@@ -43,14 +45,35 @@ comment
 
 
 
-/*TYPES OF VARIABLES*/
+
+//TYPES OF VARIABLES
 
 {
-    //note: a block is: if statements, while loops, etc...
-    var x = 5; //Function Scope = is an accessable variable out of a block || can be re-declared
-    let y = 10; //Block Scope = Is a variable only available on a block  || cannot be re-declared
-    const p = 3; //Is a variable that will never change
+    var x = 5; 
+
+    /*
+    The var variables can be accessed outside of a scope {} so they are GLOBAL variables. 
+    they can be called outdside of an IF Statement for example, while a let or const varibles CANNOT be called
+
+    var Variables can be re-defined and overwrite
+    */
+
+    let y = 10;
+    y = 1;
+
+    /*
+    let Variables can be re-declared but CANNOT be re-defined
+
+    */
+
+    const p = 3; 
+
+    /* 
+    It cannot be changed at all, only the properties once is an object.
+    */
 }
+
+
 
 
 
@@ -95,7 +118,7 @@ comment
     //Exponent
     var z = a ** 3
     console.log(z)
-    var z = Math.pow(x,3)
+    var z = Math.pow(a,3)
     console.log(z)
 
     //assignment operators
@@ -112,8 +135,10 @@ comment
 
 
 
-//DATATYPES
 
+
+
+//DATATYPES
 {
     /*
     Strings
@@ -145,8 +170,6 @@ comment
     
 
 }
-
-
 //OBJECT DATATYPES
 {
     /*
@@ -154,8 +177,8 @@ comment
     array 
     date
     */
-
-    let myArray = ['Saab', 'Volvo', 'BMW'] // this is an Array
+   
+    let myArray = ['Saab', 'Volvo', 'BMW'] // this is an Array || and an array is an object 
     let myObject = { // This is an Object 
         firstName:'Jhon', 
         lastName:'Doe', 
@@ -174,7 +197,10 @@ comment
 
 
 
-//FUNCTIONS 
+
+
+
+//FUNCTIONS OVERVIEW
 
 {
     function myFirstFunction(x,y){ //Here it takes the 2 variable applied to that function
@@ -197,7 +223,12 @@ comment
 
 
 
-// OBJECTS PROPERTIES AND METHODS
+
+
+
+
+
+// OBJECTS PROPERTIES AND METHODS OVERVIEW
 
 {
     const person = { //The person is the obeject
@@ -234,20 +265,21 @@ comment
 
 
 
-// EVENTS
-
+// EVENTS OVERVIEW
 {
     /*
-
     Onchange -- An HTML element has been changed
     Onlcick -- The user clicks an HTML element
     onmouseover -- The user moves the mouse over an HTML element
     onmouseout -- The user moves the mouse away from an HTML element
     onkeydown -- The user pushes a keyboard key
     onload -- The browser has finished loading the page
-
     */
 }
+
+
+
+
 
 
 
@@ -262,119 +294,149 @@ comment
 // STRINGS
 
 {
+    //.lenght 
     let k = 'adlibfbviaebibibzdiv lhsdblasblhb';
     let l = k.length; // String lenght
     console.log('The lenght of the string is ' +l); // String addition
+
+
 
     //string as an object
     let x = 'Jhon '; // A normal String
     let y = new String('Jhon') // A string as an object
     console.log(typeof x + ' || ' + typeof y); // How to find the data type
-    console.log(x==y); // This is true due that has the same value
+    console.log(x==y); // This is true due that they have the same value
     console.log(x===y) // This will be false becuase is not the same data type
 
-    //NOTE : When comparing 2 JS object the return will be always false
 
 
-    //String methods
+    //NOTE : When comparing 2 JS object the return will be always false no matter what.
+
+
+
+    //STRING METHODS
+
+
 
     // slice();
     let string = 'Hello Everyone, I am Camilo';
     let part = string.slice(0,8); // slice(location1, endOfLocation2)
-    console.log(part); // NOTE : Is possible to use negative integers 
+    console.log(part); // Output: 'Hello Ev'
 
-    // repalce();
+
+
+    // replace();
+    // replace() is a Case Sensitive method || to make it non-sensitive you can use /text/i and /text/g to reaplace all the matches.
     let text = 'My name is Jhon, jhon';
-    let rep = text.replace(/Jhon/ig, 'Camilo'); // replace methos is Case Sensitive || to make it nonsensitive you can ise /text/i
-    // and /text/g to reaplace all the matches
-    console.log(text); // the text will still be the same
-    console.log(rep); // but the rep variable is now the new version
+    let rep = text.replace(/Jhon/ig, 'Camilo'); 
+    console.log(rep); // output: 'My name is Camilo, Camilo'
+
+
 
     //toUpperCase(); || toLowerCase();
     let upperLower = 'This is a text.'
-    let upper = upperLower.toUpperCase();
-    console.log(upper)
-    let lower =  upperLower.toLowerCase();
-    console.log(lower)
+    let upper = upperLower.toUpperCase(); 
+    console.log(upper) //output: 'THIS IS A TEXT.
+    let lower =  upperLower.toLowerCase(); 
+    console.log(lower) //output: 'this is a text.'
+
+
 
     //contact()
     let text1 = 'Hello';
     let text2 = 'World';
-    let text3 = text1.concat(' ' + text2); //Joint 2 strings by contact
-    console.log(text3);
+    let text3 = text1.concat(' ' + text2); // Joint the 2 strings 
+    console.log(text3); // output: 'Hello World'
+
+
 
     //trim()
-    let toTrim = '    Hello   '; //trim will get rid of the spaces in a string, at the end or the beggining 
+    let toTrim = '    Hello   '; //Get rid of the spaces in a string, at the end or the beggining.
     let trimed = toTrim.trim();
-    console.log(toTrim.length);
-    console.log(trimed.length);
+    console.log(trimed.length); //output: 'Hello'
+
+
 
     //padStart() || padEnd()
     let myLet = 5;
-    let myStr = myLet.toString();
-    let pads = myStr.padStart(5,'X'); // output XXXX5
-    console.log(pads);
-    let pade = myStr.padEnd(4,'X');  //output 5XXX
-    console.log(pade);
+    let myStr = myLet.toString(); // convert into a tring
+    let pads = myStr.padStart(5,'X'); // add 4 'X' at the beggining.
+    console.log(pads); // output: XXXX5
+    let pade = myStr.padEnd(4,'X');  // add 3 'X' at the end.
+    console.log(pade); //output: 5XXX
+
+
 
     //charAt();
     let charText = 'This is an example'
-    console.log(charText.charAt(11)) //It will find the letter at the location 11 
+    //It will find the letter at the location 11 
+    console.log(charText.charAt(11)) // output: 'e'
 
+
+    
     //split();
     let splitText = 'My name is, Camilo'
     let splitArray = splitText.split(','); // Use the parameter to split the text and now the string is an array
     console.log(splitArray[0]) // output: My name is
     console.log(splitArray[1]) // output: Camilo 
 
-}
+
+
+    
+
+
+    //STRING SEARCH METHODS 
 
 
 
-
-
-
-
-
-
-
-
-//STRING SEARCH METHODS
-
-{
     //indexOf() || lastIndexOf()
     let locateText = 'Banana, Pineaple, Strawberry, Pineaple';
-    let locatedIndex = locateText.indexOf('Pineaple'); // This will find the location of the index of the character on the string 
-    console.log(locatedIndex);
-    let locatedLastIndex = locateText.lastIndexOf('Pineaple',10); // the socond paramether is a start location to look for a match
-    console.log(locatedLastIndex); // tell the position of the last SAME item on a list
+    let locatedIndex = locateText.indexOf('Pineaple'); // This will find the location of the index
+    console.log(locatedIndex); // output: 8
+    let locatedLastIndex = locateText.lastIndexOf('Pineaple'); // This will find the last index matching 
+    console.log(locatedLastIndex); // output: 8
+
+
 
     //search(); -- is exactly the same as indexOf();
     let searchString = 'Banana, Strawberry, Pineaple, Banana';
     let searchStr = searchString.search('Banana'); // Show the position of Banana 1st character
-    console.log(searchStr);
+    console.log(searchStr); //output: 0
+
+
 
     //match();
     let matchingText = "The rain in SPAIN stays mainly in the plain"; 
-    const matArr = matchingText.match(/ain/ig); //Match all the time there is a character 
-    console.log( 'There are: ' + matArr.length + ' matches of "ain" on (' + matchingText + ')');
+    const matArr = matchingText.match(/ain/ig); //Match all the time there is a character || use of i anf g to avoid case sensitivity.
+    console.log( `There are: ${matArr.length}  matches of "ain" on '${matchingText}'`);
+    // output: There are: 4 matches of "ain" on 'The rain in SPAIN stays mainly in the plain'
+
+
 
     //matchAll();
     let matchallText = "I love cats. Cats are very easy to love. Cats are very popular.";
     const matchingAll = matchallText.matchAll(/cats/ig);
-    console.log(Array.from(matchingAll));
+    console.log(Array.from(matchingAll));// the output is an object which is 3 properties all with the value of cat and a lenght of 3 in total 
+
+
 
     //Includes();
     let IncludesText = "Hello world, welcome to the universe.";
-    console.log(IncludesText.includes("world")); 
-    console.log(IncludesText.includes("Bye")); 
+    console.log(IncludesText.includes("world")); //output: true
+    console.log(IncludesText.includes("Bye"));  //output: false
+
+
 
     //startsWith(); || endsWith();
     let startText = "Hello world, welcome to the universe.";
-    console.log(startText.startsWith("Hello"));
+    console.log(startText.startsWith("Hello")); // output: true
     let endsText = "Hello world, welcome to the universe.";
-    console.log(endsText.startsWith("world", 5));
+    console.log(endsText.startsWith("world", 5)); // output: false
 }
+
+
+
+
 
 
 
@@ -408,6 +470,8 @@ comment
 
 
 
+
+
 //NUMBERS
 
 {
@@ -415,15 +479,23 @@ comment
     var x = 999999999999999;   // x will be 999999999999999
     var y = 9999999999999999n;  // y will be 10000000000000000 
 
+
+
     let xExp = 123e5;    // 12300000
     let yNExp = 123e-5;   // 0.00123 
+
+
 
     var x = 10; // int
     var y = 5;
     var z = '12'; // string
     var v = '7'
 
+
+
     //NOTE: JavaScript uses the + operator for both addition and concatenation.
+
+
 
     x + y //15
 
@@ -435,7 +507,11 @@ comment
 
     x + y + z //1512
 
-    // JavaScript will try to convert strings to numbers in all numeric operations:
+
+
+    // NOTE: JavaScript will try to convert strings to numbers in all numeric operations:
+
+
 
     z / v //This will work
 
@@ -445,85 +521,106 @@ comment
 
     x / v  //Even this will work !!!
 
-    // NaN not a number 
 
+
+    // NaN: Not a Number
     var nanNumber = NaN;
-    console.log(`NaN type is classified as: ${typeof nanNumber}`);
+    console.log(`NaN type is classified as: ${typeof nanNumber}`); //but the output is: number
 
-    // BIG INT, to define a Bigint you can use a n at the end or BigInt()
 
+
+    // BIG INT, to define a Bigint you can use a n at the end of the number or a BigInt() type declaration
     let bigIntEx = BigInt(834);
-
-    // You cannot use big int with another dqta types 
-
+    // You cannot use big int with another data types 
     // bigIntEx * 4 // ERROR
-    //In order to performthe operation you will need to change the type 
-
+    // In order to performthe operation you will need to change the type 
     Number(bigIntEx) * 4;
 
-    //MAX AND MIN SAFE INTEGERS
 
+    //MAX AND MIN SAFE INTEGERS
     let max = Number.MAX_SAFE_INTEGER; // 9007199254740991
     let min =  Number.MIN_SAFE_INTEGER // - 9007199254740991
+    /*
+    When you use big int security can be a problem due that the containers of the big in will start to fail, so that is why you have a
+    MAX and MIN safe integer as cap for each case. 
+    */
 
+
+
+
+    //NUMBER METHODS
+
+
+
+     //Number.isInteger();
+     Number.isInteger(2); //true
+     Number.isInteger(2.34); //false
+ 
+
+
+     //isSafeInteger();
+     Number.isSafeInteger(10); //true
+     Number.isSafeInteger(12345678901234567890n); //false, due that is too long
+ 
+
+
+     //toString();
+     let xString = 4;
+     console.log(typeof xString);
+     let sStringc = xString.toString();
+     console.log(typeof sStringc); // converts the number on a string
+ 
+
+
+     //toExponential();
+     let wer = 9.6562093480248908;
+     console.log(wer.toExponential()) // output:  9.656209348024891e+0
+     console.log(wer.toExponential(1)) // output:  9.7e+0
+     console.log(wer.toExponential(2)) // output:  9.66e+0
+     console.log(wer.toExponential(4))  // output:  9.6562e+0
+     
+ 
+
+     //toFixed();
+     let expRed = 39.2398234234;
+     console.log(expRed.toFixed()) // output: 39
+     console.log(expRed.toFixed(1)) // output: 39.2
+     console.log(expRed.toFixed(2)) // output: 39.24
+     console.log(expRed.toFixed(3)) // output: 39.240
+     
+ 
+
+     // toPrecision(); it will show the precise number you state to show
+     let presC = 232.12344;
+     console.log(presC.toPrecision()); // 232.12344
+     console.log(presC.toPrecision(2)); // 2.3e+2 
+     console.log(presC.toPrecision(3)); // 232 
+     console.log(presC.toPrecision(4)); // 232.1
+     console.log(presC.toPrecision(5)); // 232.12
+
+
+
+     //parseInt(); converse strings into numbers
+     let pInt = '132.34';
+     let nowN = parseInt(pInt)
+     console.log(typeof pInt); // output: string
+     console.log(typeof nowN); // output: number
 }
 
 
 
 
-//NUMBER METHODS
 
-{
-    //Number.isInteger();
 
-    Number.isInteger(2); //true
-    Number.isInteger(2.34); //false
 
-    //isSafeInteger();
-    
-    Number.isSafeInteger(10); //true
-    Number.isSafeInteger(12345678901234567890n); //false due that is too long
 
-    //toString();
 
-    let xString = 4;
-    console.log(typeof xString);
-    let sStringc = xString.toString();
-    console.log(typeof sStringc); // converts the number on a string
 
-    //toExponential();
 
-    let x = 9.6562093480248908;
-    console.log(x.toExponential())
-    console.log(x.toExponential(1))
-    console.log(x.toExponential(2))
-    console.log(x.toExponential(4)) // Scientific exponential 
-    
-    //toFixed();
 
-    let expRed = 39.2398234234;
-    console.log(expRed.toFixed())
-    console.log(expRed.toFixed(1))
-    console.log(expRed.toFixed(2))
-    console.log(expRed.toFixed(3)) // how the amount of exponential ona float number
 
-    // toPrecision(); it will show the precise number you state to show
 
-    let presC = 232.12344;
-    console.log(presC.toPrecision()); // 232.12344
-    console.log(presC.toPrecision(2)); // 2.3e+2 
-    console.log(presC.toPrecision(3)); // 232 
-    console.log(presC.toPrecision(4));
-    console.log(presC.toPrecision(5));
 
-    //parseInt(); converse strings into numbers
-
-    let pInt = '132.34';
-    let nowN = parseInt(pInt)
-    console.log(typeof pInt);
-    console.log(typeof nowN);
-
-}
 
 
 //JS ARRAYS 
@@ -538,17 +635,24 @@ comment
     console.log(typeof myCars); // Make note this is a object
 
 
+
     //add elements to an array 
     myCars[3] = 'Chevy'; //NOTE: Adding elements in this way can create 'holes' in the array.
     console.log(myCars)
+
+
 
     //Accessing a array element 
     console.log(myCars[0]);
     console.log(typeof myCars[0]);
 
+
+
     //Changing an array element
     myCars[0] = 'Mazda';
     console.log(myCars);
+
+
 
     //Arrays can be objects and store more than just simple data 
     const myMulArr = [];
@@ -557,9 +661,13 @@ comment
     myMulArr[2] = myCars
     console.log(myMulArr);
 
+
+
     //lenght(); property
     let totalLenghtArr = myCars.length;
     console.log(totalLenghtArr);
+
+
 
     //Looping an array 
     let textLoop = '<ul>';
@@ -569,78 +677,115 @@ comment
     textLoop += '<ul/>'
     document.getElementById('Looping').innerHTML = textLoop;
 
+
+
     // .forEach()
     let textforeach = '<ul>';
     myCars.forEach(myloopFunct);
     textforeach += '</ul>'
-
     function myloopFunct(eachcar){
         textforeach +=  `<li>${eachcar}</li>`
     };
     document.getElementById('forEachdis').innerHTML = textforeach;
 
-    //Adding an array element with push()
 
+
+    //Adding an array element with push()
     const pushArr = ['Banana','Melon'];
     pushArr.push('Lemon');
     console.log(pushArr);
 
 
 
+    // ARRAYS METHODS 
 
 
 
 
+    // toString()
+    const fruits = ['Banana', 'Pineaple', 'Apple', 'Mango'];
+    console.log(fruits.toString()); // output: Banana,Pineaple,Apple,Mango
 
 
 
-    function binary(decimal) {
-        if(decimal == 0){
-            return '0';
-        }else{
-             //create an array in bases 2 not greater than the decimal we are looking for 
-        const myArr = [1];
-        let inc = 1;
-        for (let i = 0; i < decimal; i++){
-            if (inc < decimal){
-                inc *= 2;
-                myArr.push(inc)
-            } else if (myArr[myArr.length -1] > decimal){
-                    myArr.pop()   
-            }
-        }
-        //reverse array to have the hisges possible number fisrt 
-        myArr.reverse();
-        //Loop tr the array summing each until we get the result adn assign 1 to a number taken into account to the result 
-        let binaryArr = '';
-        let counter = 0;
-        for (let f = 0; f < myArr.length; f++){
-            if (myArr[f] + counter <= decimal ){
-                counter += myArr[f]
-                binaryArr += '1';
-            } else if(myArr[f] + counter > decimal){
-                binaryArr += '0';
-            }
-        }
+    // join() || is the same as toString but you can specify the separators
+    console.log(fruits.join('#')); // output: Banana#Pineaple#Apple#Mango
 
-        return binaryArr
-        }
 
-    }
-    console.log(binary(12));
 
+    // pop() & push()
+    fruits.pop(); // Will delete the last item.
+    console.log(fruits); // output: [ "Banana", "Pineaple", "Apple" ]
+    fruits.push('Kiwi'); // This will add an item in the last position
+    console.log(fruits); // output: [ "Banana", "Pineaple", "Apple", "Kiwi" ]
+
+
+
+    // shift()
+    fruits.shift(); // removes the first element and change the position of the rest filling the 'hole'
+    console.log(fruits) // outout: [ "Pineaple", "Apple", "Kiwi" ]
+
+
+
+    // unshift()
+    fruits.unshift('Lemon'); // Will act the same as shift() but instead of remove it will add the element
+    console.log(fruits); // output: [ "Lemon", "Pineaple", "Apple", "Kiwi" ]
+
+
+
+    //Cahanging element 
+    fruits[0] = 'Banana';
+    console.log(fruits) // output: [ "Banana", "Pineaple", "Apple", "Kiwi" ]
+
+
+
+    //delete elements 
+    delete fruits[0];
+    console.log(fruits); //ouput: [ <1 empty slot>, "Pineaple", "Apple", "Kiwi" ] || Notice how there is a hole now 
+    fruits[0] = 'Bananas'; // Fixing the hole
+
+
+
+    // concat() || this will merge 2 arrays together 
+    const vegies = ['Carrot', 'Tomato', 'Lettuce'];
+    const grains = ['Rice', 'Lentils', 'Chickpeas'];
+    const food = fruits.concat(vegies,grains); // merging all the arr || note that concat() can take multiple arguments
+    console.log(food) // output: [ "Bananas", "Pineaple", "Apple", "Kiwi", "Carrot", "Tomato", "Lettuce", "Rice", "Lentils", "Chickpeas" ]
+    const food1 = food.concat('Brown Rice'); // note that it also can take values as arguments 
+    console.log(food1) // output: [ "Bananas", "Pineaple", "Apple", "Kiwi", "Carrot", "Tomato", "Lettuce", "Rice", "Lentils", "Chickpeas", 'Brown Rice' ]
+
+
+
+    // flat() 'Flattening an Arr' || reduce de dimensions of an array 
+    const multDimen = [[1,2],[3,4],[5,6],[6,7]];
+    const simplierArr = multDimen.flat();
+    console.log(simplierArr) // Output: [ 1, 2, 3, 4, 5, 6, 6, 7 ]
+
+
+
+
+    // ARRAYS SORT
+    
+    
+    
+    // reverse()
+    const numbers = ['one', 'two', 'three', 'four', 'five'];
+    numbers.reverse(); 
+    console.log(numbers); //output: [ "five", "four", "three", "two", "one" ]
+
+
+
+    //sort() || Will sort the array Alphabetically
+    numbers.sort();
+    console.log(numbers); //output: [ "five", "four", "one", "three", "two" ]
+
+
+
+    //
+
+
+
+
+    // ARRAY ITERATIONS 
+    // ARRAY CONST 
 }
-
-
-const sevenboom = [2, 55, 60, 9, 86];
-
-function sevenBoom(arr) {
-    let strarr = arr.toString();
-    const sevmat = strarr.match(/7/ig);
-    if (sevmat == null){
-        return 'there is no 7 in the array'
-    }
-    return 'Boom!'  
-}
-
-console.log(sevenBoom(sevenboom));
